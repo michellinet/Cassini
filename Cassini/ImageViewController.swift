@@ -25,9 +25,12 @@ class ImageViewController: UIViewController {
     
     private func fetchImage() {
         if let url = imageURL {
-            let urlContents = try? Data(contentsOf: url)
-            if let imageData = urlContents {
-                image = UIImage(data: imageData)
+            DispatchQueue.global(qos: .userInitiated).async {
+                let urlContents = try? Data(contentsOf: url)
+                
+                if let imageData = urlContents {
+                    self.image = UIImage(data: imageData)
+                }
             }
         }
     }
@@ -36,7 +39,6 @@ class ImageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageURL = DemoURL.stanford
     }
     
     override func viewWillAppear(_ animated: Bool) {
