@@ -29,7 +29,9 @@ class ImageViewController: UIViewController {
                 let urlContents = try? Data(contentsOf: url)
                 
                 if let imageData = urlContents, url == self?.imageURL {
-                    self?.image = UIImage(data: imageData)
+                    DispatchQueue.main.async {
+                        self?.image = UIImage(data: imageData)
+                    }
                 }
             }
         }
