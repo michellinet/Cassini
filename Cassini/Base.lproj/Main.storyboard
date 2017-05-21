@@ -40,7 +40,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H1p-aQ-esB">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <state key="normal" title="Earth"/>
+                                        <state key="normal" title="Earth">
+                                            <color key="titleColor" red="0.39338125489999998" green="0.073829387989999995" blue="0.67205906410000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <segue destination="lQd-N6-yro" kind="showDetail" identifier="Earth" id="K3q-tt-ODo"/>
                                         </connections>
@@ -48,7 +50,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JS5-xw-Xi7">
                                         <rect key="frame" x="0.0" y="80" width="128" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <state key="normal" title="Cassini"/>
+                                        <state key="normal" title="Cassini">
+                                            <color key="titleColor" red="0.39338125489999998" green="0.073829387989999995" blue="0.67205906410000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <segue destination="lQd-N6-yro" kind="showDetail" identifier="Cassini" id="XHU-iv-RBC"/>
                                         </connections>
@@ -56,7 +60,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oxC-Um-R1G">
                                         <rect key="frame" x="0.0" y="160" width="128" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <state key="normal" title="Saturn"/>
+                                        <state key="normal" title="Saturn">
+                                            <color key="titleColor" red="0.39338125489999998" green="0.073829387989999995" blue="0.67205906410000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <segue destination="lQd-N6-yro" kind="showDetail" identifier="Saturn" id="fhf-8J-c1H"/>
                                         </connections>
@@ -65,6 +71,7 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.39338125489999998" green="0.073829387989999995" blue="0.67205906410000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="c3X-sw-3Ah" firstAttribute="centerX" secondItem="G8H-dP-O1Q" secondAttribute="centerX" id="KN2-md-JDb"/>
                             <constraint firstItem="c3X-sw-3Ah" firstAttribute="centerY" secondItem="G8H-dP-O1Q" secondAttribute="centerY" id="dsL-rF-BuU"/>
@@ -91,10 +98,16 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xsh-QU-A6U">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </scrollView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Gbd-UB-lCv">
+                                <rect key="frame" x="170" y="316" width="37" height="37"/>
+                                <color key="color" red="0.39338125489999998" green="0.073829387989999995" blue="0.67205906410000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Xsh-QU-A6U" secondAttribute="trailing" id="0cG-0J-ABo"/>
+                            <constraint firstItem="Gbd-UB-lCv" firstAttribute="centerX" secondItem="Xsh-QU-A6U" secondAttribute="centerX" constant="1" id="BOm-TW-FTS"/>
+                            <constraint firstItem="Gbd-UB-lCv" firstAttribute="centerY" secondItem="Xsh-QU-A6U" secondAttribute="centerY" constant="1" id="K2b-Uq-Jfw"/>
                             <constraint firstItem="Xsh-QU-A6U" firstAttribute="bottom" secondItem="dVs-WR-saq" secondAttribute="top" id="RiA-VW-YWi"/>
                             <constraint firstItem="Xsh-QU-A6U" firstAttribute="leading" secondItem="xnr-Ru-qON" secondAttribute="leading" id="f5i-91-hz4"/>
                             <constraint firstItem="Xsh-QU-A6U" firstAttribute="top" secondItem="xnr-Ru-qON" secondAttribute="top" id="i35-ui-JXo"/>
@@ -103,6 +116,7 @@
                     <navigationItem key="navigationItem" id="2jK-mG-QdN"/>
                     <connections>
                         <outlet property="scrollView" destination="Xsh-QU-A6U" id="Y6P-9I-NzM"/>
+                        <outlet property="spinner" destination="Gbd-UB-lCv" id="uU1-ML-RSc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HAL-BV-dix" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -147,6 +161,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="EDX-bY-wGY"/>
+        <segue reference="fhf-8J-c1H"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.39338125489999998" green="0.073829387989999995" blue="0.67205906410000005" alpha="1" colorSpace="calibratedRGB"/>
 </document>
