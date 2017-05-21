@@ -16,7 +16,6 @@ class CassiniViewController: UIViewController {
             if let imageVC = (segue.destination.contents as? ImageViewController) {
                 imageVC.imageURL = url
                 imageVC.title = (sender as? UIButton)?.currentTitle
-                
             }
         }
     }
