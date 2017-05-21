@@ -28,7 +28,7 @@ class ImageViewController: UIViewController {
             DispatchQueue.global(qos: .userInitiated).async { [weak self] in
                 let urlContents = try? Data(contentsOf: url)
                 
-                if let imageData = urlContents {
+                if let imageData = urlContents, url == self?.imageURL {
                     self?.image = UIImage(data: imageData)
                 }
             }
